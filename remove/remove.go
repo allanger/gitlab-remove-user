@@ -11,6 +11,8 @@ import (
 func Remove(userID int, dry bool, token string) {
 	if userID < 0 {
 		log.Fatal("specify gitlab user id with --user flag")
+	} else if len(token) == 0 {
+		log.Fatal("specify gitlab token with --token flag")
 	}
 	var wg sync.WaitGroup
 	git := g.GetCLient(token)

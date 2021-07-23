@@ -7,6 +7,12 @@ import (
 )
 
 func Search(user string, token string) {
+	if len(user) == 0 {
+		log.Fatal("specify gitlab user id with --user flag")
+	} else if len(token) == 0 {
+		log.Fatal("specify gitlab token with --token flag")
+	}
+
 	git := g.GetCLient(token)
 	userOpt := &gitlab.ListUsersOptions{
 		Search: gitlab.String(user),
