@@ -24,6 +24,6 @@ var removeCmd = &cobra.Command{
 
 func init() {
 	removeCmd.Flags().IntVarP(&userID, "user", "u", -1, "gitlab user id")
-	removeCmd.Flags().BoolVar(&dryrun, "dry", true, "use for dry run")
+	removeCmd.Flags().BoolVar(&dryrun, "dry-run", true, "use for dry run")
 	RootCmd.AddCommand(removeCmd)
 }
